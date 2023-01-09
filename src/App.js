@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import {
   ApolloClient,
@@ -46,14 +46,14 @@ function App() {
     <Router>
         <div>
           <Navigation />
-          <Routes>
-            <Route path="/" element={<Home/>} />
-            <Route path="/shop" element={<Shop/>} />
-            <Route path="/Estimator" element={<Estimator/>} />
-            <Route path="/service" element={<Service/>} />
-            <Route path="/portfolio" element={<Portfolio/>} />
-            <Route path="/login" element={<Login/>} />
-          </Routes>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/shop" component={Shop} />
+            <Route exact path="/estimator" component={Estimator} />
+            <Route exact path="/service" component={Service} />
+            <Route exact path="/portfolio" component={Portfolio} />
+            <Route exact path="/login" component={Login} />
+          </Switch>
         </div>
     </Router>
     </ApolloProvider>

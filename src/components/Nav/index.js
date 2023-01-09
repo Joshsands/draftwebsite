@@ -9,9 +9,17 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import logo from "../../assets/images/logo.jpg";
 
-const Navigation = () => {
-  return (
-    <>
+class Navigation extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = { navShowing : false }
+  }
+
+  render () {
+    
+    return (
+    <div>
       <Navbar bg="danger" variant="dark">
         <Container>
           <Navbar.Brand as={Link} to="/">
@@ -23,29 +31,29 @@ const Navigation = () => {
           </Navbar.Brand>
 
           <Nav className="mb-0 linksize">
-            <Nav.Link as={Link} to="/">
+            <Link to="/">
               Home
-            </Nav.Link>
-            <Nav.Link as={Link} to="/shop">
+            </Link>
+            <Link to="/shop">
               Shop
-            </Nav.Link>
-            <Nav.Link as={Link} to="/Estimator">
+            </Link>
+            <Link to="/estimator">
               Estimator
-            </Nav.Link>
-            <Nav.Link as={Link} to="/Service">
+            </Link>
+            <Link to="/service">
               Service
-            </Nav.Link>
-            <Nav.Link as={Link} to="/Portfolio">
+            </Link>
+            <Link to="/Portfolio">
               Portfolio
-            </Nav.Link>
-            <Nav.Link as={Link} to="/login">
+            </Link>
+            <Link to="/login">
               Login
-            </Nav.Link>
+            </Link>
           </Nav>
-        </Container>
+          </Container>
       </Navbar>
-    </>
+    </div>
   );
 };
-
+}
 export default Navigation;
